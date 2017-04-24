@@ -1,0 +1,30 @@
+        $("#ajaxBtn").click(function () {
+            
+            dispLoading();
+
+             //1
+            //$.ajax({
+            //    type: 'get',
+            //    url: '/HOME/ajaxTest',
+
+            //}).done(function (html) {
+            //    $('body').append(html);
+            //});
+
+            // 2
+            $.ajax({
+                type: 'get',
+                url: '/HOME/ajaxTest',
+                success: function (data) {
+                    $('body').append(data);
+                },
+                error: function (data) {
+                    alert("Ž¸”s");
+                },
+                complete: function (data) {
+
+                    removeLoading();
+                    $('body').append(html);
+                }
+            });
+        });
